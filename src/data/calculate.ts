@@ -54,18 +54,23 @@ export const tradeGoods: Record<number, TradeGood> = {
 
 // for calculating sale price
 
-const probs2d6: Record<number, number> = {
-  2: 1 / 36,
-  3: 2 / 36,
-  4: 3 / 36,
-  5: 4 / 36,
-  6: 5 / 36,
-  7: 6 / 36,
-  8: 5 / 36,
-  9: 4 / 36,
-  10: 3 / 36,
-  11: 2 / 36,
-  12: 1 / 36,
+const probs3d6: Record<number, number> = {
+  3: 1 / 216,
+  4: 3 / 216,
+  5: 6 / 216,
+  6: 10 / 216,
+  7: 15 / 216,
+  8: 21 / 216,
+  9: 25 / 216,
+  10: 27 / 216,
+  11: 27 / 216,
+  12: 25 / 216,
+  13: 21 / 216,
+  14: 15 / 216,
+  15: 10 / 216,
+  16: 6 / 216,
+  17: 3 / 216,
+  18: 1 / 216,
 };
 
 const salePct: Record<string, number> = {
@@ -108,9 +113,9 @@ const getPct = (r: number) => {
 
 const getExpectedValue = (modifier: number) => {
   let accum = 0;
-  for (const rollResultString in probs2d6) {
+  for (const rollResultString in probs3d6) {
     const rollResult = Number(rollResultString);
-    const probability = probs2d6[rollResult];
+    const probability = probs3d6[rollResult];
     const adjustedRoll = rollResult + modifier;
 
     const pct = getPct(adjustedRoll); // given a roll + modifier, whats the sales price?
