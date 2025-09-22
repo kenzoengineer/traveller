@@ -119,27 +119,6 @@ const getExpectedValue = (modifier: number) => {
   return accum;
 };
 
-const selections = [
-  {
-    key: 46,
-    purchaseCoeff: 0.75,
-    sellMod: 3,
-    maxQty: 100,
-  },
-  {
-    key: 35,
-    purchaseCoeff: 0.9,
-    sellMod: 3,
-    maxQty: 100,
-  },
-  {
-    key: 12,
-    purchaseCoeff: 1,
-    sellMod: 3,
-    maxQty: 100,
-  },
-];
-
 /**
  * 2D bounded knapsack (all items weigh 1 ton)
  *

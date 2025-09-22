@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { calculate, fCredits, tradeGoods, type Result } from "./data/calculate";
 import Autocomplete from "./components/Autocomplete";
 import Item from "./components/Item";
@@ -118,7 +118,7 @@ function App() {
                   </div>
                 </div>
                 <div className="mb-5">
-                  {result.selections.map((selection, idx) => {
+                  {result.selections.map((selection) => {
                     return (
                       <div className="flex">
                         <p className="w-70">{selection.key}</p>
