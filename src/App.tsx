@@ -111,15 +111,13 @@ function App() {
                     <p className="w-70 inline-block">Total Profit: </p>
                     <span
                       className={`${
-                        result.profit - result.moneyUsed > 0
-                          ? "text-green-300"
-                          : "text-red-300"
+                        result.profit > 0 ? "text-green-300" : "text-red-300"
                       }`}
                     >
-                      {fCredits(result.profit - result.moneyUsed)} Cr
+                      {fCredits(result.profit)} Cr
                     </span>
                     <span className="opacity-50 text-sm pl-5">
-                      ({result.profit - result.moneyUsed})
+                      ({result.profit})
                     </span>
                   </div>
                 </div>
@@ -150,14 +148,6 @@ function App() {
                     <p className="w-70 inline-block">Total Funds Used: </p>
                     <span className="text-green-300">
                       {fCredits(result.moneyUsed)} Cr
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-md">
-                    <p className="w-70 inline-block">Total Revenue: </p>
-                    <span className="text-green-300">
-                      {fCredits(result.profit)} Cr
                     </span>
                   </div>
                 </div>

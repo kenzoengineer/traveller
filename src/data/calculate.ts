@@ -248,11 +248,11 @@ export const calculate = (
     convertedItems.push({
       key: item.item,
       cost: purchasePrice,
-      value: expectedSalePrice,
+      value: expectedSalePrice - purchasePrice,
       maxQty: item.maxQty,
     });
   }
-
+  console.log("converted", convertedItems);
   const res = boundedKnapsack2D(capacity, budget, convertedItems);
   console.log(res);
   return res;
