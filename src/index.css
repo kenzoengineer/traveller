@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Space Mono", monospace;
+}
+body {
+  background-color: var(--color-zinc-900);
+}
